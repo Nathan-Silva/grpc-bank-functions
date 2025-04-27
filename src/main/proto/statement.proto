@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.account.pocbankgrpc;
+
+service StatementService {
+  rpc getStatement (StatementRequest) returns (StatementResponse);
+}
+
+message StatementRequest {
+  string accountId = 1;
+}
+
+message StatementResponse {
+  repeated string transactions = 1;
+}
